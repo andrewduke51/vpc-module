@@ -39,11 +39,11 @@ resource "aws_internet_gateway" "internet_gateway" {
   vpc_id = aws_vpc.main_vpc.id
 }
 
-resource "aws_nat_gateway" "aws_nat_gateway" {
-  allocation_id = aws_eip.nat_eip.id
-  subnet_id     = aws_subnet.subnet_dmz.id
-  depends_on    = [aws_internet_gateway.internet_gateway]
-}
+#resource "aws_nat_gateway" "aws_nat_gateway" {
+#  allocation_id = aws_eip.nat_eip.id
+#  subnet_id     = aws_subnet.subnet_dmz.id
+#  depends_on    = [aws_internet_gateway.internet_gateway]
+#}
 
 # EIP
 resource "aws_eip" "nat_eip" {
