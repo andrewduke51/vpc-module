@@ -1,6 +1,7 @@
 # Create a VPC
 resource "aws_vpc" "main_vpc" {
   cidr_block = var.subnet_vpc
+  instance_tenancy = "default"
   tags = {
     "app_tag" = "aws-infra"
   }
